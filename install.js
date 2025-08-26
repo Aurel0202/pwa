@@ -1,3 +1,5 @@
+const install = () => {
+
 const installBtn = document.querySelector('.install-btn')
 let deferredPrompt = null
 
@@ -22,3 +24,5 @@ installBtn.addEventListener('click', async e => {
 window.addEventListener('appinstalled', e => {
   installBtn.classList.add('hidden')
 })
+}
+export default install
