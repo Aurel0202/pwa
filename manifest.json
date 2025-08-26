@@ -42,14 +42,14 @@
       "src": "screenshots/screenshot-portrait.png",
       "type": "images/png",
       "sizes": "397x631",
-      "form_factor": "narrow",
+      "form_factor": "narrow", // Pour téléphone
       "label": "Blabla"
     },
     {
       "src": "screenshots/screenshot-paysage.png",
       "type": "images/png",
       "sizes": "1015x629",
-      "form_factor": "wide",
+      "form_factor": "wide", // Pour pc
       "label": "Blabla"
     }
   ]
