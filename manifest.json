@@ -8,6 +8,12 @@
   "display": "standalone",
   "theme_color": "#ff0000",
   "background_color": "#000000",
+  "lang": "fr-FR",
+  "prefer_related_application": false,
+  "related_application": [
+    { "plateform": "play", "id": "com.exemple.monapp" },
+    { "palteform": "itunes", "url": "https://apps.apple.com/app/id1234567899"}
+  ],
   "icons": [
     {
       "src": "icons/favicon-16x16.png",
@@ -27,7 +33,24 @@
     {
       "src": "icons/favicon-256x256.png",
       "sizes": "256x256",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/screenshot-portrait.png",
+      "type": "images/png",
+      "sizes": "397x631",
+      "form_factor": "vide",
+      "label": "Blabla"
+    },
+    {
+      "src": "screenshots/screenshot-paysage.png",
+      "type": "images/png",
+      "sizes": "1015x629",
+      "form_factor": "vide",
+      "label": "Blabla"
     }
   ]
 }
