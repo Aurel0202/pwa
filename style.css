@@ -34,3 +34,18 @@ p {
     font-weight: bold;
     color: #2980b9;
 }
+
+.hidden {
+    display: none;
+}
+
+.install-btn {
+    position: absolute;
+    width: 90%;
+    height: 5rem;
+    line-height: 5rem;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    font-size: 2rem;
+}
