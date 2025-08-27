@@ -91,3 +91,31 @@ self.addEventListener("fetch", (e) => {
     })
   );
 });
+
+//push notifications
+self.addEventListener('push', e => {
+  if(!(self.Notification && self.Notification.permission === 'granted'))
+  {
+    return
+  }
+  console.log('push')
+
+  const data = e.data?.json() ?? {}
+  const title = data.title || "Hello WF-12"
+  const url = data.url || "https://cepegra.be"
+  const message = data.message || "Message de la formation WF-12"
+  const icon = "/icons/favicon-256x256.png"
+
+  const notification = registration.showNotification
+  (title, {
+    body: message,
+    icon
+  })
+})
+
+self.addEventListener('notificationclick', e => {
+  e.notification.close()
+  e.waitUntil(
+    clients.openWindow(url)
+  )
+})
