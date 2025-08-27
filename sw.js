@@ -19,7 +19,7 @@ const urlsToCache = [
   "https://ingrwf12.cepegra-frontend.xyz/cockpit1/api/content/item/voyages"
 ]
 
-const cacheVersion = 1
+const cacheVersion = 3
 
 const CACHE_NAME = `pwa-cache-${cacheVersion}`
 
@@ -33,8 +33,21 @@ self.addEventListener('install', e => {
   return self.skipWaiting()
 })
 
+//nettoie le cache si changement de version
 self.addEventListener('activate', e => {
   console.log('sw actived')
+  let oldVersion = cacheVersion -1
+  e.waitUntil(
+    caches.has(`pwa-cache-${oldVersion}`)
+    .then(exists => {
+      if(exists) {
+        caches.delete(`pwa-cache-${oldVersion}`)
+        .then( r => {
+          console.log("Ancien cache supprimé" + r)
+        })
+      }
+    })
+  )
   return self.clients.claim()
 })
 
