@@ -92,6 +92,8 @@ self.addEventListener("fetch", (e) => {
   );
 });
 
+let url = null
+
 //push notifications
 self.addEventListener('push', e => {
   if(!(self.Notification && self.Notification.permission === 'granted'))
@@ -102,7 +104,7 @@ self.addEventListener('push', e => {
 
   const data = e.data?.json() ?? {}
   const title = data.title || "Hello WF-12"
-  const url = data.url || "https://cepegra.be"
+  url = data.url || "https://cepegra.be"
   const message = data.message || "Message de la formation WF-12"
   const icon = "/icons/favicon-256x256.png"
 
